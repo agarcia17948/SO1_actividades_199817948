@@ -67,72 +67,13 @@ Las diferencias principales, radican en su diseño, estructura y enfoque para ge
 
 | **Caracteristica** | **Monolíticos** | **Microkernels**| **Nanokernels**|
 |---|---|---|---|
-| **Arquitectura** | Tienen todas las funciones del sistema operativo en un solo bloque de código que se ejecuta en modo privilegiado. | Descomponen el sistema operativo en módulos pequeños, ejecutando solo las funciones esenciales del kernel en modo privilegiado, mientras que los servicios adicionales se ejecutan en modo de usuario. | Son aún más pequeños y delegan la mayoría de las funciones al espacio de usuario, manteniendo solo las funciones más esenciales en el núcleo. |
+| **Arquitectura** |Tienen todas las funciones del sistema operativo en un solo bloque de código que se ejecuta en modo privilegiado. | Descomponen el sistema operativo en módulos pequeños, ejecutando solo las funciones esenciales del kernel en modo privilegiado, mientras que los servicios adicionales se ejecutan en modo de usuario. |Son aún más pequeños y delegan la mayoría de las funciones al espacio de usuario, manteniendo solo las funciones más esenciales en el núcleo. |
+
+
 | **Tamaño y Complejidad** | Tienden a ser más grandes y complejos, ya que contienen todas las funciones en un solo núcleo. | Son más pequeños y modulares, lo que facilita la actualización y el mantenimiento de componentes individuales. | Buscan ser extremadamente pequeños y ligeros, delegando la mayor parte de las funciones al espacio de usuario. |
 | **Rendimiento** | Suelen tener un rendimiento eficiente ya que las funciones se llaman directamente sin la necesidad de comunicación entre módulos. | Pueden tener un rendimiento ligeramente inferior debido a la necesidad de comunicación entre módulos a través de intercambios de mensajes. | Buscan un rendimiento optimizado al minimizar la cantidad de código en el núcleo. |
 | **Seguridad** | Si un componente falla, puede afectar todo el sistema, lo que puede tener implicaciones en términos de seguridad. | Al separar funciones en módulos y ejecutar servicios en modo de usuario, pueden ser más seguros, ya que los fallos en un componente no afectan directamente al núcleo. | Buscan maximizar la seguridad al minimizar la superficie de ataque y delegar funciones al espacio de usuario. |
 | **Flexibilidad y Modularidad** | Pueden carecer de flexibilidad y modularidad, ya que todo está integrado en un solo núcleo. | Son modulares y permiten una mayor flexibilidad en la adición o actualización de componentes individuales sin afectar al núcleo. | Buscan la máxima flexibilidad y modularidad, dejando la mayoría de las funciones al espacio de usuario. |
-
-
-
-
-
-
- 
-### Arquitectura:
-
-### Monolíticos: 
-Tienen todas las funciones del sistema operativo en un solo bloque de código que se ejecuta en modo privilegiado.
-
-### Microkernels: 
-Descomponen el sistema operativo en módulos pequeños, ejecutando solo las funciones esenciales del kernel en modo privilegiado, mientras que los servicios adicionales se ejecutan en modo de usuario.
-
-### Nanokernels: 
-Son aún más pequeños y delegan la mayoría de las funciones al espacio de usuario, manteniendo solo las funciones más esenciales en el núcleo.
----
-## Tamaño y Complejidad:
-
-### Monolíticos: 
-Tienden a ser más grandes y complejos, ya que contienen todas las funciones en un solo núcleo.
-
-### Microkernels:
- Son más pequeños y modulares, lo que facilita la actualización y el mantenimiento de componentes individuales.
-
-### Nanokernels: 
-Buscan ser extremadamente pequeños y ligeros, delegando la mayor parte de las funciones al espacio de usuario.
-
-## Rendimiento:
-
-### Monolíticos: 
-Suelen tener un rendimiento eficiente ya que las funciones se llaman directamente sin la necesidad de comunicación entre módulos.
-
-### Microkernels: 
-Pueden tener un rendimiento ligeramente inferior debido a la necesidad de comunicación entre módulos a través de intercambios de mensajes.
-
-### Nanokernels: 
-Buscan un rendimiento optimizado al minimizar la cantidad de código en el núcleo.
-
-## Seguridad:
-
-### Monolíticos: 
-Si un componente falla, puede afectar todo el sistema, lo que puede tener implicaciones en términos de seguridad.
-
-### Microkernels: 
-Al separar funciones en módulos y ejecutar servicios en modo de usuario, pueden ser más seguros, ya que los fallos en un componente no afectan directamente al núcleo.
-
-### Nanokernels: 
-Buscan maximizar la seguridad al minimizar la superficie de ataque y delegar funciones al espacio de usuario.
-
-## Flexibilidad y Modularidad:
-
-### Monolíticos: 
-Pueden carecer de flexibilidad y modularidad, ya que todo está integrado en un solo núcleo.
-
-### Microkernels: 
-Son modulares y permiten una mayor flexibilidad en la adición o actualización de componentes individuales sin afectar al núcleo.
-
-### Nanokernels: 
-Buscan la máxima flexibilidad y modularidad, dejando la mayoría de las funciones al espacio de usuario.
 
 ---
 # User vs Kernel Mode
