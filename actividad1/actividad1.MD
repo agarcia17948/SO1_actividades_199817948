@@ -1,6 +1,6 @@
 # ¿Qué es un Kernel?
 
-Es un intermediario entre el hardware y las aplicaciones de software. Es una capa de software que proporciona servicios esenciales para que los programas y procesos se ejecuten de manera eficiente en el hardware. El kernel es el núcleo del sistema operativo administra y coordina los recursos de hardware para que las aplicaciones puedan ejecutarse de manera eficiente y segura.
+Es un intermediario entre el hardware y las aplicaciones de software. El kernel es el núcleo del sistema operativo administra y coordina los recursos de hardware para que las aplicaciones puedan ejecutarse de manera eficiente y segura.
 
 ## sus funciones principales:
 ### Gestión de memoria:
@@ -13,21 +13,23 @@ Proporciona controladores para interactuar con los dispositivos de hardware.
 Ofrece servicios para el manejo y acceso a archivos en el sistema, organizando la información de manera estructurada.
 ### Gestión de entrada/salida: 
 Facilita la comunicación entre el software y los dispositivos de entrada/salida.
-Seguridad y control de acceso: Administra la seguridad del sistema, controlando el acceso a los recursos y protegiendo la integridad del kernel y los datos del sistema.
+### Seguridad y control de acceso: 
+Administra la seguridad del sistema, controlando el acceso a los recursos y protegiendo la integridad del kernel y los datos del sistema.
 
 ---
 
 # ¿Cuáles son los tipos de Kernels?
 
 Existen varios tipos de kernels, y cada uno tiene su enfoque en la gestión de recursos del sistema. Los principales tipos de kernels son:
-
+--- 
 ## Monolíticos:
+
 ### Definición: 
 Los kernels monolíticos contienen todos los servicios del sistema operativo en un solo bloque de código, ejecutándose en modo privilegiado.
 
 ### Características: 
-Tienen un rendimiento eficiente ya que las funciones se pueden llamar directamente sin necesidad de comunicación entre módulos. Ejemplos de sistemas operativos con kernels monolíticos incluyen Linux y Windows NT.
-
+Rendimiento eficiente debido a que las funciones se pueden llamar directamente sin necesidad de comunicación entre módulos. Ejemplos de sistemas operativos con kernels monolíticos incluyen Linux y Windows NT.
+--- 
 ## Microkernels:
 
 ### Definición: 
@@ -35,7 +37,7 @@ Los microkernels son diseñados para ser pequeños y modulares. Solo contienen l
 
 ### Características: 
 Los microkernels tienden a ser más seguros y más flexibles, ya que los servicios se ejecutan en espacios de memoria separados. Ejemplos de sistemas operativos con microkernels incluyen QNX y MINIX.
-
+---
 ## Nanokernels:
 
 ### Definición: 
@@ -52,10 +54,27 @@ Aunque no son estrictamente kernels de sistema operativo, los hipervisores gesti
 ### Características: 
 Los hipervisores se encargan de la virtualización del hardware y permiten la ejecución de múltiples sistemas operativos en una misma máquina física. Ejemplos incluyen VMware ESXi y Microsoft Hyper-V.
 
+
+
+
+
+
 # Diferencias principales entre los kernels
 
 Las diferencias principales, radican en su diseño, estructura y enfoque para gestionar los recursos del sistema.
 
+---
+| Caracteristica | Monoliticos | Microkernels | Nanokernels |
+| --- | --- | --- | --- |
+| Arquitectura | --- | --- | --- |
+| Tamaño y complejidad | --- | --- | --- |
+| Rendimiento | --- | --- | --- |
+| Seguridad | --- | --- | --- |
+| Flexibilidad y Modularidad | --- | --- | --- |
+
+
+
+ 
 ### Arquitectura:
 
 ### Monolíticos: 
@@ -66,7 +85,7 @@ Descomponen el sistema operativo en módulos pequeños, ejecutando solo las func
 
 ### Nanokernels: 
 Son aún más pequeños y delegan la mayoría de las funciones al espacio de usuario, manteniendo solo las funciones más esenciales en el núcleo.
-
+---
 ## Tamaño y Complejidad:
 
 ### Monolíticos: 
