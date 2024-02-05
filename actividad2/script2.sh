@@ -1,37 +1,38 @@
 #!/bin/bash
 
-# Leer la variable GITHUB_USER
-read -p "Ingrese el nombre de usuario de GitHub: " GITHUB_USER
+# Lee la variable USER_GITHUB
+# read -p "Buscar usuario de GitHub: " USER_GITHUB
+
+USER_GITHUB="agarcia17948"
 
 # Consultar la URL de GitHub API
-API_URL="https://api.github.com/users/$GITHUB_USER"
-
+API_URL="https://api.github.com/users/$USER_GITHUB"
 echo "visitare: $API_URL"
-
 JSON_RESPONSE=$(curl -s $API_URL)
 
 # Extraer datos del JSON
-USER_ID=$(echo $JSON_RESPONSE | jq -r '.id')
-CREATED_AT=$(echo $JSON_RESPONSE | jq -r '.created_at')
+USUARIO=$(echo $JSON_RESPONSE | jq -r '.login')
+ID=$(echo $JSON_RESPONSE | jq -r '.id')
+CREADO=$(echo $JSON_RESPONSE | jq -r '.created_at')
 
 # Crear mensaje de saludo
-MESSAGE="Hola $GITHUB_USER. User ID: $USER_ID. Cuenta fue creada el: $CREATED_AT."
+echo "Hola $USUARIO. User ID: $ID. Cuenta creada el: $CREADO."
 
-
-ECHO $MESSAGE
-
-ECHO "fin del script"
 # Crear el directorio de logs basado en la fecha
-# LOG_DIR="/tmp/$(date +'%Y%m%d')"
-# mkdir -p $LOG_DIR
+cadFecha=$(date +'%Y%m%d')
+LOG_DIR="/tmp/$cadFecha"
+mkdir -p $LOG_DIR
 
+echo "escribiendo en el archivo log"
 # Crear el archivo de log
-# LOG_FILE="$LOG_DIR/saludos.log"
-# echo $MESSAGE > $LOG_FILE
+LOG_FILE="$LOG_DIR/saludos.log"
+echo " hola $USUARIO. User ID: $ID. Cuenta creada el: $CREADO." > $LOG_FILE
 
-# Imprimir mensaje en consola
-# echo $MESSAGE
+# echo "Guardando el mensaje en: $LOG_FILE"
 
-# Configurar el cronjob para ejecutar el script cada 5 minutos
-# CRON_COMMAND="*/5 * * * * /ruta/del/script.sh"
-# (crontab -l ; echo "$CRON_COMMAND") | crontab -
+
+# Configurar cronjob para ejecutar el script cada 5 minutos
+
+(crontab -l ; echo "*/5 * * * * /home/agarcia/SO1_2024_clase/actividad2/script2.sh") | crontab -
+
+echo "fin del script"
